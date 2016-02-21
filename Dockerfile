@@ -11,8 +11,6 @@ RUN \
   cd /root/usergrid/portal && \
   npm install -g grunt-cli && \
   ./build.sh && \
-  mv /root/usergrid/portal/dist/usergrid-portal/* /var/www/html && \
-  chown -R www-data:www-data /var/www/html && \
   \
   echo "+++ cleanup" && \
   rm -rf /root/usergrid && \
