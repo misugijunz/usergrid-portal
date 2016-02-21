@@ -21,7 +21,7 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean -y
 
-EXPOSE 80
+EXPOSE 8989
 
 COPY run.sh /root/run.sh
 CMD /root/run.sh
