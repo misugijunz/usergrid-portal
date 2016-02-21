@@ -4,11 +4,6 @@ FROM yep1/usergrid-java
 RUN \
   apt-get update && \
   \
-  echo "+++ install nginx" && \
-  apt-get install -y nginx && \
-  chown -R www-data:www-data /var/lib/nginx && \
-  rm -rf /var/www/html/* && \
-  \
   echo "++ build usergrid portal" && \
   apt-get install -y npm git-core nodejs-legacy phantomjs && \
   git clone --single-branch --branch master --depth 1 \
@@ -27,8 +22,6 @@ RUN \
   apt-get clean -y
 
 EXPOSE 80
-
-VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/conf.d", "/var/log/nginx"]
 
 COPY run.sh /root/run.sh
 CMD /root/run.sh
